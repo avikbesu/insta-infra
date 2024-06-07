@@ -96,3 +96,11 @@ If any data is persisted from the services to carry across sessions, it gets pus
 | Real-time OLAP       | druid         | ❌         |
 | Real-time OLAP       | pinot         | ❌         |
 | Test Data Management | data-caterer  | ✅         |
+
+
+## Install/Build
+
+```shell
+go install data-catering/insta-infra
+go build -o insta-infra .
+```
