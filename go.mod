@@ -1,6 +1,6 @@
 module data-catering/insta-infra
 
-go 1.17
+go 1.21
 
 require (
 	github.com/docker/cli v26.1.4+incompatible
