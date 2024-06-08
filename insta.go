@@ -38,7 +38,9 @@ func main() {
 		EnableBashCompletion: true,
 		Commands: []*cli.Command{
 			{
-				Usage: "Run services",
+				Name:    "run",
+				Aliases: []string{"-r"},
+				Usage:   "Run services",
 				Action: func(cCtx *cli.Context) error {
 					err := runServices(ctx, srv, p, cCtx.Args().Slice())
 					if err != nil {
@@ -48,17 +50,8 @@ func main() {
 				},
 			},
 			{
-				Name:    "run",
-				Aliases: []string{"r"},
-				Usage:   "Run services",
-				Action: func(cCtx *cli.Context) error {
-					fmt.Println("run task: ", cCtx.Args().First())
-					return nil
-				},
-			},
-			{
 				Name:    "connect",
-				Aliases: []string{"c"},
+				Aliases: []string{"-c"},
 				Usage:   "Connect to a service",
 				Action: func(cCtx *cli.Context) error {
 					fmt.Println("connect task: ", cCtx.Args().First())
@@ -67,7 +60,7 @@ func main() {
 			},
 			{
 				Name:    "down",
-				Aliases: []string{"d"},
+				Aliases: []string{"-d"},
 				Usage:   "Bring all services down",
 				Action: func(cCtx *cli.Context) error {
 					err := downServices(ctx, srv, p, cCtx.Args().Slice())
@@ -79,7 +72,7 @@ func main() {
 			},
 			{
 				Name:    "update",
-				Aliases: []string{"u"},
+				Aliases: []string{"-u"},
 				Usage:   "Update to the latest service versions",
 				Action: func(cCtx *cli.Context) error {
 					fmt.Println("update task: ", cCtx.Args().First())
@@ -87,6 +80,7 @@ func main() {
 				},
 			},
 		},
+		DefaultCommand: "--help",
 	}
 
 	if err := app.Run(os.Args); err != nil {

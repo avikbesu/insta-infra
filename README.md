@@ -101,6 +101,7 @@ If any data is persisted from the services to carry across sessions, it gets pus
 ## Install/Build
 
 ```shell
+docker run -v ~/code/insta-infra/:/tmp/insta-infra -it golang:1.22.4 bash
 go install data-catering/insta-infra
-go build -o insta-infra .
+CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o insta-infra-darwin-arm64 .
 ```

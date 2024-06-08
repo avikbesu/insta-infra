@@ -1,15 +1,11 @@
 module data-catering/insta-infra
 
-go 1.21
-
-require (
-	github.com/docker/cli v26.1.4+incompatible
-	github.com/docker/compose/v2 v2.27.1
-	github.com/docker/docker v26.1.4+incompatible // indirect
-)
+go 1.22
 
 require (
 	github.com/compose-spec/compose-go/v2 v2.1.1
+	github.com/docker/cli v26.1.4+incompatible
+	github.com/docker/compose/v2 v2.27.1
 	github.com/urfave/cli/v2 v2.27.2
 )
 
@@ -51,6 +47,7 @@ require (
 	github.com/distribution/reference v0.6.0 // indirect
 	github.com/docker/buildx v0.14.1 // indirect
 	github.com/docker/distribution v2.8.3+incompatible // indirect
+	github.com/docker/docker v26.1.3+incompatible // indirect
 	github.com/docker/docker-credential-helpers v0.8.0 // indirect
 	github.com/docker/go v1.5.1-1.0.20160303222718-d30aec9fd63c // indirect
 	github.com/docker/go-connections v0.5.0 // indirect
